@@ -17,3 +17,8 @@ python ./image_face_trim.py <input_directory> <output_directory>
 - <output_directory>
   - Specify a directory to output trimmed JPG files.
 
+
+
+#### Example
+
+Please see the example folder. 
