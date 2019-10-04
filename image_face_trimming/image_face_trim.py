@@ -10,7 +10,13 @@ import cv2
 import tensorflow as tf
 import glob
 
-model_file = "./model/human_face_detection.pb"
+#import os.path as osp
+import numpy as np
+import torch
+import RRDBNet_arch as arch
+
+
+model_file = "./models/human_face_detection.pb"
 
 # Input Definition
 detection_graph = tf.Graph()
@@ -99,6 +105,7 @@ def main(argv):
                         x_right = cam_width
             
                     image_trm = image_np[y_top : y_bottom, x_left : x_right]
+
                     image_trm_resize = cv2.resize(image_trm, dsize=(150,200))
 
                     cv2.imwrite(image_out+"/trimed_"+str(i)+"_"+os.path.basename(file),image_trm_resize)
